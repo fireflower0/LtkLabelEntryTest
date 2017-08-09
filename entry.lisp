@@ -1,0 +1,20 @@
+(load "packages.lisp" :external-format :utf-8)
+
+(in-package :cl-ltk)
+
+(defun main ()
+  (with-ltk ()
+    (wm-title *tk* "Entry")
+    (bind *tk* "<Alt-q>" (lambda (event)
+                           (setq *exit-mainloop* t)))
+    (let ((lbl1 (make-instance 'label :text "String input" :width 60))
+          (entry (make-instance 'entry))
+          (btn (make-instance 'button :text "Button"))
+          (lbl2 (make-instance 'label :text "Label" :foreground 'red)))
+      (setf (command btn) (lambda () (setf (text lbl2) (text entry))))
+      (bind entry "<Return>" (lambda (event)
+			       (setf (text lbl2) (text entry))))
+      (focus entry)
+      (pack (list lbl1 entry btn lbl2) :fill :x))))
+
+(main)
