@@ -7,7 +7,7 @@ Overview
 Display the character string entered in the entry on the label.
 
 ## Demo
-![entry.png](https://github.com/fireflower0/LtkLabelEntryTest/img/entry.png)
+![entry.png](https://github.com/fireflower0/LtkLabelEntryTest/blob/master/img/entry.png)
 
 ## Licence
 MIT
